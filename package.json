@@ -1,0 +1,24 @@
+{
+  "name": "social-media-backend",
+  "version": "1.0.0",
+  "description": "Social Media Backend Application Using Node.js and Express.Js and MongoDB as Database.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tusharOxacular09/Social-Media-Backend-Application.git"
+  },
+  "author": "Tushar Kanta Swain",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
