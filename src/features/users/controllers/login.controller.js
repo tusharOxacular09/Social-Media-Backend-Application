@@ -1,4 +1,4 @@
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 import UserRepository from "../repositories/user.repository.js";
 import jwt from "jsonwebtoken";
 
@@ -27,7 +27,7 @@ export const Login = async (req, res, next) => {
     });
 
     // 4. Sending Successful message to the user
-    return successMessageHandeler(res, 200, "Successfully LoggedIn!", token);
+    return successMessageHandler(res, 200, "Successfully LoggedIn!", token);
   } catch (error) {
     // Handeling the error by the application level error handeler
     next(error);

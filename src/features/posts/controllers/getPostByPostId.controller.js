@@ -1,5 +1,5 @@
 import PostRepository from "../repositories/post.repository.js";
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 import { customErrorHandler } from "../../../middlewares/errorHandeler.middleware.js";
 
 export const getPostByPostId = async (req, res, next) => {
@@ -12,7 +12,7 @@ export const getPostByPostId = async (req, res, next) => {
     const post = await PostRepository.getPostByPostId(postId);
 
     // Sending Successful message to user
-    return successMessageHandeler(
+    return successMessageHandler(
       res,
       200,
       "Successfully getting the post!",

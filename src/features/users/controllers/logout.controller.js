@@ -1,5 +1,5 @@
 import { customErrorHandler } from "../../../middlewares/errorHandeler.middleware.js";
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 import UserRepository from "../repositories/user.repository.js";
 import jwt from "jsonwebtoken";
 
@@ -27,7 +27,7 @@ export const Logout = async (req, res, next) => {
     res.clearCookie("access_token");
 
     // 5. Sending Successful message to the user
-    return successMessageHandeler(res, 200, "Successfully Loggedout!");
+    return successMessageHandler(res, 200, "Successfully Loggedout!");
   } catch (error) {
     // Handeling the error by the application level error handeler
     next(error);
@@ -58,7 +58,7 @@ export const LogoutFromAllDevices = async (req, res, next) => {
     res.clearCookie("access_token");
 
     // 5. Sending Successful message to the user
-    return successMessageHandeler(
+    return successMessageHandler(
       res,
       200,
       "Successfully Loggedout from all the devices!"

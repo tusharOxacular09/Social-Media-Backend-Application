@@ -1,5 +1,5 @@
 import PostRepository from "../repositories/post.repository.js";
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 import { customErrorHandler } from "../../../middlewares/errorHandeler.middleware.js";
 
 export const deletePost = async (req, res, next) => {
@@ -12,7 +12,7 @@ export const deletePost = async (req, res, next) => {
     await PostRepository.deletePost(postId);
 
     // Sending Successful message to user
-    return successMessageHandeler(res, 200, "Successfully deleted the post!");
+    return successMessageHandler(res, 200, "Successfully deleted the post!");
   } catch (error) {
     next(error);
   }

@@ -1,4 +1,4 @@
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 import CommentRepository from "../repositories/comment.repository.js";
 
 export const getCommentsOfAPost = async (req, res, next) => {
@@ -10,7 +10,7 @@ export const getCommentsOfAPost = async (req, res, next) => {
     const allComments = await CommentRepository.getAllcomments(postId);
 
     // Sending Successful message to user
-    return successMessageHandeler(
+    return successMessageHandler(
       res,
       200,
       "Successfully getting all comments!",

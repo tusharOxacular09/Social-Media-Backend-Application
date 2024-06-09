@@ -1,5 +1,5 @@
 import PostRepository from "../repositories/post.repository.js";
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 
 export const createPost = async (req, res, next) => {
   try {
@@ -12,7 +12,7 @@ export const createPost = async (req, res, next) => {
     const newPost = await PostRepository.createPost(userId, caption, imageURL);
 
     // Sending Successful message to user
-    return successMessageHandeler(
+    return successMessageHandler(
       res,
       201,
       "Successfully created new post!",

@@ -1,6 +1,6 @@
 import { customErrorHandler } from "../../../middlewares/errorHandeler.middleware.js";
 import UserRepository from "../repositories/user.repository.js";
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 
 export default class UserDetailsController {
   // 1. Get User Details By userId
@@ -15,7 +15,7 @@ export default class UserDetailsController {
       const userDetails = await UserRepository.getUserDetailsByUserId(userId);
 
       // returning successful message
-      return successMessageHandeler(
+      return successMessageHandler(
         res,
         200,
         "Successfully getting user details!",
@@ -33,7 +33,7 @@ export default class UserDetailsController {
       const userDetails = await UserRepository.getAllUserDetails();
 
       // returning successful message
-      return successMessageHandeler(
+      return successMessageHandler(
         res,
         200,
         "Successfully getting all user details!",
@@ -56,7 +56,7 @@ export default class UserDetailsController {
       );
 
       // returning successful message
-      return successMessageHandeler(
+      return successMessageHandler(
         res,
         200,
         "Successfully updated user details!",

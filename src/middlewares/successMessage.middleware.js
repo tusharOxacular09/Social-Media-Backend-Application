@@ -1,4 +1,4 @@
-export const successMessageHandeler = (response, statusCode, message, data) => {
+export const successMessageHandler = (response, statusCode, message, data) => {
   try {
     // Sending the response
     response.status(statusCode).json({

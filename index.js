@@ -7,6 +7,9 @@ import { invalidRoutesHandlerMiddleware } from "./src/middlewares/invalidRoute.m
 import { userRouter } from "./src/features/users/routes/user.router.js";
 import { postRouter } from "./src/features/posts/routes/post.router.js";
 import { commentRouter } from "./src/features/comments/routes/comment.router.js";
+import { likeRouter } from "./src/features/likes/routes/like.router.js";
+import { friendsRouter } from "./src/features/friends/routes/friends.router.js";
+import { otpRouter } from "./src/features/otp/routes/otp.router.js";
 
 const app = express();
 
@@ -22,6 +25,9 @@ app.get("/", welcomeMessageMiddleware);
 app.use("/api/users", userRouter);
 app.use("/api/posts", postRouter);
 app.use("/api/comments", commentRouter);
+app.use("/api/likes", likeRouter);
+app.use("/api/friends", friendsRouter);
+app.use("/api/otp", otpRouter);
 
 // Invalid Route Middleware
 app.use(invalidRoutesHandlerMiddleware);

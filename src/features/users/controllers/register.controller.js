@@ -1,4 +1,4 @@
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 import UserRepository from "../repositories/user.repository.js";
 import bcrypt from "bcrypt";
 const SALT_ROUNDS = 10;
@@ -15,7 +15,7 @@ export const Register = async (req, res, next) => {
     });
 
     // Sending Successful message to the user
-    return successMessageHandeler(
+    return successMessageHandler(
       res,
       201,
       "Successfully Registered!",

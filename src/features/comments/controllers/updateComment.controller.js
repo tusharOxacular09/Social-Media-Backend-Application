@@ -1,5 +1,5 @@
 import { customErrorHandler } from "../../../middlewares/errorHandeler.middleware.js";
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 import CommentRepository from "../repositories/comment.repository.js";
 
 export const updateComment = async (req, res, next) => {
@@ -19,7 +19,7 @@ export const updateComment = async (req, res, next) => {
     );
 
     // Sending Successful message to user
-    return successMessageHandeler(
+    return successMessageHandler(
       res,
       200,
       "Successfully updated the comment!",

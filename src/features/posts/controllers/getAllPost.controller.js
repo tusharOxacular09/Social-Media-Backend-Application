@@ -1,5 +1,5 @@
 import PostRepository from "../repositories/post.repository.js";
-import { successMessageHandeler } from "../../../middlewares/successMessage.middleware.js";
+import { successMessageHandler } from "../../../middlewares/successMessage.middleware.js";
 
 export const getAllPost = async (req, res, next) => {
   try {
@@ -7,7 +7,7 @@ export const getAllPost = async (req, res, next) => {
     const allPosts = await PostRepository.getAllPost();
 
     // Sending Successful message to user
-    return successMessageHandeler(
+    return successMessageHandler(
       res,
       200,
       "Successfully getting all posts!",
